@@ -46,6 +46,17 @@ return require('packer').startup(function()
   use 'neovim/nvim-lspconfig'
   use 'williamboman/nvim-lsp-installer'
 
+  -- TreeSitter
+  use ({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', })
+
+  -- nvim-tree :help nvim-tree-setup
+  use {
+    'nvim-tree/nvim-tree.lua',
+    requires = {
+      'nvim-tree/nvim-web-devicons', -- optional, for file icons
+    },
+    tag = 'nightly' -- optional, updated every week. (see issue #1193)
+  }
   -- Gitsigns
   use({ 'lewis6991/gitsigns.nvim' })
 
@@ -55,6 +66,10 @@ return require('packer').startup(function()
   -- Databases
   use({"https://github.com/tpope/vim-dadbod.git"})
   use({"kristijanhusak/vim-dadbod-ui"})
+  -- The above is highly revered but not working out for me. Trying a new thing
+  use({'nvim-lua/plenary.nvim'})
+  use({'MunifTanjim/nui.nvim'})
+  use({'guysherman/pg.nvim'})
 
   -- Python REPL
   use({"geg2102/nvim-python-repl"})

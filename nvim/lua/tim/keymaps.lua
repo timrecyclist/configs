@@ -24,10 +24,10 @@ keymap('n', '<C-k>', '<C-w>k', opts)
 keymap('n', '<C-l>', '<C-w>l', opts)
 
 -- Resizing
-keymap('n', '<C-S>k', '<cmd>resize -2<CR>', opts)
-keymap('n', '<C-S>j', '<cmd>resize +2<CR>', opts)
-keymap('n', '<C-S>h', '<cmd>vertical resize -2<CR>', opts)
-keymap('n', '<C-S>l', '<cmd>vertical resize +2<CR>', opts)
+keymap('n', '<Up>k', '<cmd>resize -2<CR>', opts)
+keymap('n', '<Down>j', '<cmd>resize +2<CR>', opts)
+keymap('n', '<Left>h', '<cmd>vertical resize -2<CR>', opts)
+keymap('n', '<Right>l', '<cmd>vertical resize +2<CR>', opts)
 
 -- Gitsigns Toggles
 keymap('n', '<leader>gst', '<cmd>Gitsigns toggle_signs<CR>', opts)
@@ -43,3 +43,7 @@ keymap('n', '<leader>pack', '<cmd>vs ~/.config/nvim/lua/tim/plugins.lua<CR>', op
 keymap('n', '<leader>after', '<cmd>Ex ~/.config/nvim/after/plugin/<CR>', opts)
 
 keymap('n', '<leader>so', '<cmd>so $MYVIMRC<CR>', opts)
+
+-- Database --> pg.nvim
+keymap('n', '<leader>qc', '<cmd>PGConnectBuffer<cr>')
+keymap('v', '<leader>qq', '<cmd>exec "PGRunQuery"<cr>')
