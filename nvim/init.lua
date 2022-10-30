@@ -1,15 +1,16 @@
-require('user.options')
-require('user.keymaps')
-require('user.plugins')
-require('user.colorscheme')
-require('user.cmp')
-require('user.lsp')
-require('user.nvim-tree')
-require('user.bufferline')
-require('user.lualine')
-require('user.toggleterm')
-require('user.gitsigns')
-require('user.treesitter')
-require('user.telescope')
-require('user.nvim-python-repl')
-require('user.icons')
+--[[ 
+:help runtimepath
+
+These two paths are automatically sourced
+~/.config/nvim/init.lua
+~/.config/nvim/after/plugin
+
+This path will need you to require it in ~/.config/nvim/init.lua
+~/.config/nvim/lua/tim/init.lua
+
+All the lua files you put in lua/tim/ will have to be required in tim/init.lua.
+e.g. tim.options
+--]]
+
+require("tim")
+

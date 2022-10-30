@@ -1,5 +1,7 @@
-local cmp = require 'cmp'
+local cmp = require('cmp')
+local luasnip = require('luasnip')
 
+require('luasnip/loaders/from_vscode').lazy_load()
 
 -- Used in super-tab mapping
 local check_backspace = function()
@@ -85,8 +87,12 @@ cmp.setup({
   }),
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
+    { name = 'nvim_lua' },
     { name = 'luasnip' },
+    { name = 'vim_lsp' },
+    { name = 'git' },
     { name = 'buffer' },
+    { name = 'path' },
   }),
   formatting = {
     fields = { 'kind', 'abbr', 'menu' },
@@ -95,7 +101,9 @@ cmp.setup({
       vim_item.kind = string.format('%s', kind_icons[vim_item.kind])
       vim_item.menu = ({
         nvim_lsp = '[LSP]',
+        nvim_lua = '[nvimlua]',
         luasnip = '[Snippet]',
+        git = '[Git]',
         buffer = '[Buffer]',
         path = '[Path]',
       })[entry.source.name]
@@ -103,9 +111,5 @@ cmp.setup({
     end,
   },
 })
-
-
--- Set up lspconfig
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 
