@@ -20,8 +20,27 @@ require("nvim-tree").setup({
   },
   renderer = {
     group_empty = true,
-  },
+    icons = {
+      glyphs = {
+        git = {
+        unstaged = "✗",
+        staged = "✓",
+        unmerged = "",
+        renamed = "➜",
+        untracked = "★",
+        deleted = "",
+        ignored = "◌",
+        },
+      },
+    },
+    },
   filters = {
     dotfiles = false,
+  },
+  git = {
+    enable = true,
+    ignore = false,
+    show_on_dirs = true,
+    timeout = 400,
   },
 })

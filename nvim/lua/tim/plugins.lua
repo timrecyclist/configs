@@ -25,7 +25,7 @@ return require('packer').startup(function()
   -- Colorscheme
   use 'EdenEast/nightfox.nvim'
 
-  -- cmp
+  -- cmp - autocompletion
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
@@ -36,7 +36,6 @@ return require('packer').startup(function()
   use 'petertriho/cmp-git'
   use 'prabirshrestha/vim-lsp'
   use 'dmitmel/cmp-vim-lsp'
-  use 'kristijanhusak/vim-dadbod-completion'
 
   -- lua_snip
   use 'L3MON4D3/LuaSnip'
@@ -50,13 +49,11 @@ return require('packer').startup(function()
   use ({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', })
 
   -- nvim-tree :help nvim-tree-setup
-  use {
-    'nvim-tree/nvim-tree.lua',
-    requires = {
-      'nvim-tree/nvim-web-devicons', -- optional, for file icons
-    },
-    tag = 'nightly' -- optional, updated every week. (see issue #1193)
-  }
+  use ({'nvim-tree/nvim-tree.lua',
+         requires = { 'nvim-tree/nvim-web-devicons' }, -- optional, for file icons 
+         tag = 'nightly' })-- optional, updated every week. (see issue #1193)
+
+  
   -- Gitsigns
   use({ 'lewis6991/gitsigns.nvim' })
 
@@ -64,12 +61,27 @@ return require('packer').startup(function()
   use ({ 'akinsho/toggleterm.nvim' })
 
   -- Databases
-  use({"https://github.com/tpope/vim-dadbod.git"})
-  use({"kristijanhusak/vim-dadbod-ui"})
-  -- The above is highly revered but not working out for me. Trying a new thing
-  use({'nvim-lua/plenary.nvim'})
-  use({'MunifTanjim/nui.nvim'})
-  use({'guysherman/pg.nvim'})
+  --[[
+  -- This isn't working out for me
+  -- I don't know how to connect it to the remote db
+  use({"tpope/vim-dadbod",
+      opt=true,
+      requires = {
+        "kristijanhusak/vim-dadbod-ui",
+        "kristijanhusak/vim-dadbod-completion",
+    },
+  })
+  --]]
+
+  --  This didn't work out - don't know how to enter password for remote
+  --  Plugin built assuming you wouldn't do remote?
+  -- use ({ 'mzarnitsa/psql' })
+
+  -- 3rd times the charm...
+  -- Nope. Won't read the configuration file
+--   use({'nvim-lua/plenary.nvim'})
+--   use({'MunifTanjim/nui.nvim'})
+--   use({'guysherman/pg.nvim'})
 
   -- Python REPL
   use({"geg2102/nvim-python-repl"})
