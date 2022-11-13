@@ -53,14 +53,27 @@ return require('packer').startup(function()
          requires = { 'nvim-tree/nvim-web-devicons' }, -- optional, for file icons 
          tag = 'nightly' })-- optional, updated every week. (see issue #1193)
 
-  
   -- Gitsigns
   use({ 'lewis6991/gitsigns.nvim' })
 
   -- Toggle Term
   use ({ 'akinsho/toggleterm.nvim' })
 
-  -- Databases
+  -- Telescope
+  use ({ 'nvim-telescope/telescope.nvim',
+         requires = {'nvim-lua/plenary.nvim'}, -- required dependency
+         tag = 'nightly'})
+
+  -- optional for telescope: grep commits
+  use ({ 'BurntSushi/ripgrep' })
+
+  -- optional for telescope: improves query performance
+  use ({'nvim-telescope/telescope-fzf-native.nvim'})
+
+  -- optional fast finder alternative to find
+  use ({'sharkdp/fd'})
+
+ -- Databases
   --[[
   -- This isn't working out for me
   -- I don't know how to connect it to the remote db
