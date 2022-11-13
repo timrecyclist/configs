@@ -6,11 +6,10 @@ local opts = { noremap = true }  -- silent = true
 vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
 
--- Normal
+-- Normal Mode
 keymap('i', 'jk', '<esc>', opts)
 keymap('v', 'jk', '<esc>', opts)
 
--- Visual --
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
@@ -19,10 +18,20 @@ keymap("v", ">", ">gv", opts)
 -- keymap('n', '<leader>nrw', '<cmd>Vex<cr>', opts)
 -- keymap('n', '<leader>nnrw', '<cmd>Ex<cr>', opts)
 
+-- nvim-tree
+keymap('n', '<leader>nvt', '<cmd>NvimTreeToggle<cr>', opts)
+keymap('n', '<leader>nvtr', '<cmd>NvimTreeRefresh<cr>', opts)
+
 -- Buffers
+-- Swap buffer in window
 keymap('n', '<S-b>', '<cmd>bprevious<cr>', opts)
 keymap('n', '<S-n>', '<cmd>bnext<cr>', opts)
+-- Delete buffer
 keymap('n', '<S-x>', '<cmd>bdelete!<cr><cmd>bprevious<cr>', opts)
+-- Open next buffer in vsplit
+keymap('n', '<S-s>b', '<cmd>vs | bnext<cr>', opts)
+
+-- Window Navigation
 keymap('n', '<C-h>', '<C-w>h', opts)
 keymap('n', '<C-j>', '<C-w>j', opts)
 keymap('n', '<C-k>', '<C-w>k', opts)
@@ -48,18 +57,37 @@ keymap('n', '<leader>pack', '<cmd>vs ~/.config/nvim/lua/tim/plugins.lua<cr>', op
 keymap('n', '<leader>after', '<cmd>NvimTreeOpen ~/.config/nvim/after/plugin/<cr>', opts)
 
 -- Database --> pg.nvim
-keymap('v', '<leader>qq', '<cmd><c-u>exec "PGRunQuery"<cr>', opts)
-keymap('n', '<leader>qc', '<cmd>PGConnectBuffer<cr>', opts)
+-- keymap('v', '<leader>qq', '<cmd><c-u>exec "PGRunQuery"<cr>', opts)
+-- keymap('n', '<leader>qc', '<cmd>PGConnectBuffer<cr>', opts)
 
--- nvim-tree
-keymap('n', '<leader>nvt', '<cmd>NvimTreeToggle<cr>', opts)
-keymap('n', '<leader>nvtr', '<cmd>NvimTreeRefresh<cr>', opts)
-
--- Run Python
+-- Run .py
 keymap ('n', '<leader>rp', '<cmd>w<cr><cmd>sp | term python %<cr>', opts)
 
--- Run a live server for whatever directory we are in
+-- Live server for current directory
 keymap('n', '<leader>rls', '<cmd>term live-server %<cr><cmd>bp<cr>', opts)
 
--- run lazygit
+-- lazygit
 keymap('n', '<leader>lg', '<cmd>term lazygit<cr>', opts)
+
+-- Packer
+keymap('n', '<leader>pki', '<cmd>PackerInstall<cr>', opts)
+keymap('n', '<leader>pkc', '<cmd>PackerClean<cr>', opts)
+
+-- Open a link when clicking on it
+-- keymap('n', 'gx', 
+
+-- Telescope
+-- files
+keymap('n', '<leader>ff', '<cmd>Telescope find_files<cr>', opts)
+-- git
+keymap('n', '<leader>commit', '<cmd>Telescope git_commits<cr>', opts)
+keymap('n', '<leader>branch', '<cmd>Telescope git_branches<cr>', opts)
+keymap('n', '<leader>status', '<cmd>Telescope git_status<cr>', opts)
+keymap('n', '<leader>stash', '<cmd>Telescope git_stash<cr>', opts)
+-- grep, buffers, keymaps, and options
+keymap('n', '<leader>grep', '<cmd>Telescope grep_string<cr>', opts)
+keymap('n', '<leader>lgrep', '<cmd>Telescope live_grep<cr>', opts)
+keymap('n', '<leader>buf', '<cmd>Telescope buffers<cr>', opts)
+keymap('n', '<leader>map', '<cmd>Telescope keymaps<cr>', opts)
+keymap('n', '<leader>opt', '<cmd>Telescope vim_options<cr>', opts)
+
