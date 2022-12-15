@@ -55,21 +55,49 @@ return require('packer').startup({function(use)
   
   -- Telescope
   use({'nvim-telescope/telescope.nvim', tag='0.1.0', commit='cabf991b1d3996fa6f3232327fc649bbdf676496',
-       requires = {'nvim-lua/plenary.nvim'}})
+       requires = {{'nvim-lua/plenary.nvim'}, { "kdheepak/lazygit.nvim" } },
+       config = function()
+          require("telescope").load_extension("lazygit")
+       end,
+     })
 
     -- Suggested plugins for telescope
     -- brew install fd: https://github.com/sharkdp/fd
     -- and ripgrep: https://github.com/BurntSushi/ripgrep
     use {'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 
+  -- Gitsigns
+  use { 'lewis6991/gitsigns.nvim', tag='v0.5' }
+
   -- Python REPL
-  use({'geg2102/nvim-python-repl', commit='126792f6d165cd2f694bbeeda040133bd6a8019b'})
+  use({'geg2102/nvim-python-repl',
+        commit='126792f6d165cd2f694bbeeda040133bd6a8019b'})
 
   -- Lualine
-  use {
-    'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-  }
+  use({'nvim-lualine/lualine.nvim',
+       commit='9d177b668c18781c53abde92116f141f3d84b04c',
+       requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  })
+
+  -- Bufferline
+  use({'akinsho/bufferline.nvim', 
+        tag = "v3.*", 
+        commit="4ecfa81e470a589e74adcde3d5bb1727dd407363",
+        requires = 'nvim-tree/nvim-web-devicons',
+  })
+
+  -- vim-illuminate - light highlight all instances of a variable when cursor is on it
+  use({'RRethy/vim-illuminate', commit='1aa7f68d3858e5409c4d99049c0703f15b70e735'})
+
+  -- General Purpose REPL
+  use {'hkupty/iron.nvim', tag = "v3.0"}
+
+  -- Greeter
+  use({'goolord/alpha-nvim', commit='0bb6fc0646bcd1cdb4639737a1cee8d6e08bcc31'})
+
+  -- ToggleTerm
+  use({'akinsho/toggleterm.nvim', commit='b02a1674bd0010d7982b056fd3df4f717ff8a57a'})
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then

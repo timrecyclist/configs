@@ -14,8 +14,13 @@ map('v', 'jk', '<esc>', opts)
 -- Splits
 map('n', '<leader>v', '<cmd>vs<cr><cmd>bn<cr>', opts)
 map('n', '<leader>s', '<cmd>sp<cr><cmd>bn<cr>', opts)
-map('n', '<leader>x', '<cmd>tabclose!<cr>', opts)
-map('n', '<leader>X', '<cmd>bdelete!<cr>', opts)
+map('n', '<leader>x', '<cmd>bdelete!<cr><cmd>bnext<cr>', opts)
+
+-- Remove highlighting
+map('n', '<leader>hl', '<cmd>nohl<cr>', opts)
+
+-- Quick save
+map('n', '<leader>wq', '<cmd>w<cr><cmd>bdelete!<cr><cmd>bnext<cr>', opts)
 
 -- Window Navigation
 map('n', '<c-h>', '<c-w>h', opts)
@@ -36,6 +41,11 @@ map('n', '<leader>ts', '<cmd>sp | term<cr>a', opts) -- sp
 -- Buffer Navigation
 map('n', '<S-h>', '<cmd>bprevious<cr>', opts) 
 map('n', '<S-l>', '<cmd>bnext<cr>', opts) 
+map('n', '<S-m>', '<cmd>tab split<cr>', opts)
+map('n', '<S-b>', '<cmd>ball<cr>', opts)
+
+-- Lazy git
+-- map('n', '<leader>lg', '<cmd>term<cr>alazygit<cr>', opts)
 
 -- Terminal Navigation
 map('t', '<c-h>', '<c-\\><c-n><c-w>h', opts) 
@@ -47,14 +57,23 @@ map('t', '<c-l>', '<c-\\><c-n><c-w>l', opts)
 map('v', '<', '<gv', opts) 
 map('v', '>', '>gv', opts) 
 
+-- Paste over currently selected text without yanking it - i.e. you can paste repeatedly now
+map('v', 'p', "'_dP", opts)
+
+-- Center search results
+map('n', 'n', 'nzz', opts)
+map('n', 'N', 'Nzz', opts)
+
 -- NvimTree
 map('n', '<leader>e', '<cmd>NvimTreeToggle<cr>', opts)
 
-
 -- Telescope
+-- vim.keymap.set needed to execute functions
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, opts) 
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, opts)
 vim.keymap.set('n', '<leader>fb', builtin.buffers, opts)
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, opts)
 
+-- Lazygit
+vim.keymap.set('n', '<leader>lg','<cmd>ToggleTerm<cr>lazygit<cr>', opts)
