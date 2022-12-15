@@ -37,6 +37,7 @@ map('n', '<right>', '<cmd>vertical resize -2<cr>', opts)
 -- Open up terminals
 map('n', '<leader>tv', '<cmd>vs | term<cr>a', opts) -- vs
 map('n', '<leader>ts', '<cmd>sp | term<cr>a', opts) -- sp
+map('t', 'qq', 'exit<cr>', opts)
 
 -- Buffer Navigation
 map('n', '<S-h>', '<cmd>bprevious<cr>', opts) 
