@@ -19,14 +19,19 @@ map('n', '<leader>x', '<cmd>bdelete!<cr><cmd>bnext<cr>', opts)
 -- Remove highlighting
 map('n', '<leader>hl', '<cmd>nohl<cr>', opts)
 
--- Quick save
+-- Quick save and exit
 map('n', '<leader>wq', '<cmd>w<cr><cmd>bdelete!<cr><cmd>bnext<cr>', opts)
 
--- Window Navigation
+-- Window Navigation for cursor
 map('n', '<c-h>', '<c-w>h', opts)
 map('n', '<c-j>', '<c-w>j', opts)
 map('n', '<c-k>', '<c-w>k', opts)
 map('n', '<c-l>', '<c-w>l', opts)
+
+-- Moving Windows around
+map('n', '<leader><s-h>', '<c-w>K', opts)
+map('n', '<leader><s-k>', '<c-w>H', opts)
+map('n', '<s-s>', '<c-w>x', opts) -- swap windows around
 
 -- Resize windows
 map('n', '<up>', '<cmd>resize -2<cr>', opts)
