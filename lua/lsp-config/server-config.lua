@@ -1,3 +1,4 @@
+--[[ -- See Mason config
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap=true, silent=true }
@@ -26,7 +27,6 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<space>wl', function()
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
   end, bufopts)
-  --]]
   vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, bufopts)
   vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
   -- vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
@@ -34,10 +34,14 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<leader>for', function() vim.lsp.buf.format { async = true } end, bufopts)
 end
 
+
 -- Add additional capabilities supported by nvim-cmp
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-local servers = {'pyright', 'tsserver'}
+local servers = {'pyright',
+                 'tsserver',
+                 'sumneko_lua'
+               }
 
 for _, server in ipairs(servers) do
   require('lspconfig')[server].setup{
@@ -49,6 +53,8 @@ for _, server in ipairs(servers) do
     }
   }
 end
+--]]
+--]]
 --[[
 require('lspconfig')['rust_analyzer'].setup{
     on_attach = on_attach,
