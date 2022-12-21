@@ -15,3 +15,6 @@ require('vim-illuminate-config')
 
 require('lsp-config.nvim-cmp-config')
 require('lsp-config.server-config')
+
+require('no-neck-pain-nvim-config')
+require('scripts')
