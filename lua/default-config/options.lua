@@ -24,6 +24,9 @@ local opts = {
 
   ignorecase = true,
   smartcase = true,
+
+  -- show invisibles
+  --listchars={tab:▸\ ,eol:¬},
 }
 
 for k, v in pairs(opts) do
