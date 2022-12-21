@@ -1,7 +1,6 @@
 local map = vim.api.nvim_set_keymap
 local opts = { silent = true, noremap = true }
 
-
 -- Leader keys
 map('', "<space>", "<nop>", opts)
 vim.g.mapleader = ' '
@@ -34,13 +33,14 @@ map('n', '<leader><s-k>', '<c-w>H', opts)
 map('n', '<s-s>', '<c-w>x', opts) -- swap windows around
 
 -- Resize windows
+map('n', '<up>', '<cmd>resize +2<cr>', opts)
 map('n', '<down>', '<cmd>resize -2<cr>', opts)
 map('n', '<left>', '<cmd>vertical resize -2<cr>', opts)
+map('n', '<right>', '<cmd>vertical resize +2<cr>', opts)
 
 -- Open up terminals
 map('n', '<leader>tv', '<cmd>vs | term<cr>a', opts) -- vs
 map('n', '<leader>ts', '<cmd>sp | term<cr>a', opts) -- sp
-map('t', 'qq', 'exit<cr>', opts)
 
 -- Buffer Navigation
 map('n', '<S-h>', '<cmd>bprevious<cr>', opts) 
@@ -48,14 +48,11 @@ map('n', '<S-l>', '<cmd>bnext<cr>', opts)
 map('n', '<S-m>', '<cmd>tab split<cr>', opts)
 map('n', '<S-b>', '<cmd>ball<cr>', opts)
 
--- Lazy git
--- map('n', '<leader>lg', '<cmd>term<cr>alazygit<cr>', opts)
-
 -- Terminal Navigation
-map('t', '<c-h>', '<c-\\><c-n><c-w>h', opts) 
-map('t', '<c-j>', '<c-\\><c-n><c-w>j', opts) 
-map('t', '<c-k>', '<c-\\><c-n><c-w>k', opts) 
-map('t', '<c-l>', '<c-\\><c-n><c-w>l', opts) 
+-- map('t', '<c-h>', '<c-\\><c-n><c-w><c-h>', opts)
+-- map('t', '<c-j>', '<c-\\><c-n><c-w><c-j>', opts)
+-- map('t', '<c-k>', '<c-\\><c-n><c-w><c-k>', opts)
+-- map('t', '<c-l>', '<c-\\><c-n><c-w><c-l>', opts)
 
 -- Better indentation
 map('v', '<', '<gv', opts) 
@@ -68,6 +65,9 @@ map('v', 'p', "'_dP", opts)
 map('n', 'n', 'nzz', opts)
 map('n', 'N', 'Nzz', opts)
 
+
+
+--[[ Plugins ]]--
 -- NvimTree
 map('n', '<leader>e', '<cmd>NvimTreeToggle<cr>', opts)
 
@@ -81,3 +81,11 @@ vim.keymap.set('n', '<leader>fh', builtin.help_tags, opts)
 
 -- Lazygit
 vim.keymap.set('n', '<leader>lg','<cmd>ToggleTerm<cr>lazygit<cr>', opts)
+
+-- No neck pain (center the screen)
+vim.keymap.set('n', '<leader>nnp', '<cmd>NoNeckPain<cr>', opts)
+
+
+-- Send to terminal
+vim.keymap.set('n', 'g2', '<cmd>lua require("scripts").send()<CR>', opts)
+vim.keymap.set('x', 'g2', '<cmd>lua require("scripts").send(true)<CR>', opts)
