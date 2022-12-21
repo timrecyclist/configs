@@ -34,10 +34,8 @@ map('n', '<leader><s-k>', '<c-w>H', opts)
 map('n', '<s-s>', '<c-w>x', opts) -- swap windows around
 
 -- Resize windows
-map('n', '<up>', '<cmd>resize -2<cr>', opts)
 map('n', '<down>', '<cmd>resize -2<cr>', opts)
 map('n', '<left>', '<cmd>vertical resize -2<cr>', opts)
-map('n', '<right>', '<cmd>vertical resize -2<cr>', opts)
 
 -- Open up terminals
 map('n', '<leader>tv', '<cmd>vs | term<cr>a', opts) -- vs
