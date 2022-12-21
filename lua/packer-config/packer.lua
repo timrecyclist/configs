@@ -27,10 +27,10 @@ return require('packer').startup({function(use)
   use('wbthomason/packer.nvim')
 
   -- Dependencies a lot of plugins depend on
-  use({'nvim-lua/plenary.nvim', -- "All the lua functions I don't wanna rewrite" 
-        commit='4b7e52044bbb84242158d977a50c4cbcd85070c7'}) 
+  use({'nvim-lua/plenary.nvim', -- 'All the lua functions I don't wanna rewrite' 
+        commit='4b7e52044bbb84242158d977a50c4cbcd85070c7'})
   use({'MunifTanjim/nui.nvim', -- A ui interface for neovim
-        commit='e67310b23d21ebe8b12d9dbadb3dfa562dda5057'})  
+        commit='e67310b23d21ebe8b12d9dbadb3dfa562dda5057'})
 
   -- Colors
   use('EdenEast/nightfox.nvim')
@@ -39,14 +39,14 @@ return require('packer').startup({function(use)
   -- LSP
   use({ 'williamboman/mason.nvim', 
         commit='b3c82a23b26818e18e20036452bdcf7821ddc37d'})
-  use({'williamboman/mason-lspconfig.nvim', 
+  use({'williamboman/mason-lspconfig.nvim',
        commit='e8bd50153b94cc5bbfe3f59fc10ec7c4902dd526'})
   use({'neovim/nvim-lspconfig',
-        commit='cbf8762f15fac03a51eaa2c6f983d4a5045c95b4'}) 
+        commit='cbf8762f15fac03a51eaa2c6f983d4a5045c95b4'})
 
   -- cmp
   use({'hrsh7th/nvim-cmp',-- Autocompletion plugin 
-        commit='8a9e8a89eec87f86b6245d77f313a040a94081c1'}) 
+        commit='8a9e8a89eec87f86b6245d77f313a040a94081c1'})
   use({'hrsh7th/cmp-nvim-lsp', -- LSP source for nvim-cmp
         commit='78924d1d677b29b3d1fe429864185341724ee5a2'})
   use({'saadparwaiz1/cmp_luasnip',-- Snippets source for nvim-cmp 
@@ -58,13 +58,13 @@ return require('packer').startup({function(use)
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 
   -- Nvim-Tree
-  use ({ 'nvim-tree/nvim-tree.lua', 
+  use ({ 'nvim-tree/nvim-tree.lua',
           tag = 'nightly', -- optional, updated every week. (see issue #1193)
           requires = {'nvim-tree/nvim-web-devicons'}, -- optional, for file icons 
   })
-  
+
   -- Telescope
-  use({'nvim-telescope/telescope.nvim', 
+  use({'nvim-telescope/telescope.nvim',
        tag='0.1.0', 
        requires = {'nvim-lua/plenary.nvim'},
      })
@@ -72,7 +72,7 @@ return require('packer').startup({function(use)
     -- Suggested plugins for telescope - brew install them
     -- fd: https://github.com/sharkdp/fd
     -- ripgrep: https://github.com/BurntSushi/ripgrep
-    use {'nvim-telescope/telescope-fzf-native.nvim', 
+    use {'nvim-telescope/telescope-fzf-native.nvim',
           run = [[cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release
                  && cmake --build build --config Release &&
                  cmake --install build --prefix build]]}
@@ -90,8 +90,8 @@ return require('packer').startup({function(use)
   })
 
   -- Bufferline
-  use({'akinsho/bufferline.nvim', 
-        tag = "v3.*", 
+  use({'akinsho/bufferline.nvim',
+        tag = 'v3.*',
         requires = 'nvim-tree/nvim-web-devicons',
   })
 
@@ -100,7 +100,7 @@ return require('packer').startup({function(use)
         commit='1aa7f68d3858e5409c4d99049c0703f15b70e735'})
 
   -- General Purpose REPL
-  -- use {'hkupty/iron.nvim', tag = "v3.0"}
+  -- use {'hkupty/iron.nvim', tag = 'v3.0'}
 
   -- psql
   --[[
@@ -109,13 +109,20 @@ return require('packer').startup({function(use)
   --]]
 
   -- Greeter
-  use({'goolord/alpha-nvim', 
+  use({'goolord/alpha-nvim',
         commit='0bb6fc0646bcd1cdb4639737a1cee8d6e08bcc31'})
 
   -- ToggleTerm
-  use({'akinsho/toggleterm.nvim', 
+  use({'akinsho/toggleterm.nvim',
         commit='b02a1674bd0010d7982b056fd3df4f717ff8a57a'})
 
+  -- No neck pain vim
+  use {'shortcuts/no-neck-pain.nvim', tag = '0.1.2' }
+
+
+
+  -- Custom plugins
+  use({'~/plugins/nvim-csv'})
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then
