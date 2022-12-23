@@ -65,6 +65,9 @@ map('v', 'p', "'_dP", opts)
 map('n', 'n', 'nzz', opts)
 map('n', 'N', 'Nzz', opts)
 
+-- Run a live server
+map('n', '<leader>rls', '<cmd>term live-server %<cr><cmd>bp<cr>', opts)
+
 
 
 --[[ Plugins ]]--
@@ -87,5 +90,5 @@ vim.keymap.set('n', '<leader>nnp', '<cmd>NoNeckPain<cr>', opts)
 
 
 -- Send to terminal
-vim.keymap.set('n', 'g2', '<cmd>lua require("scripts").send()<CR>', opts)
-vim.keymap.set('x', 'g2', '<cmd>lua require("scripts").send(true)<CR>', opts)
+-- vim.keymap.set('n', 'g2', '<cmd>lua require("scripts").send()<CR>', opts)
+-- vim.keymap.set('x', 'g2', '<cmd>lua require("scripts").send(true)<CR>', opts)
