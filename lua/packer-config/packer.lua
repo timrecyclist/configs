@@ -123,7 +123,10 @@ return require('packer').startup({function(use)
         commit='b02a1674bd0010d7982b056fd3df4f717ff8a57a'})
 
   -- No neck pain vim
-  use {'shortcuts/no-neck-pain.nvim', tag = '0.1.2' }
+  use({'shortcuts/no-neck-pain.nvim', tag = '0.1.2' })
+
+  -- Colorizer
+  use({'norcalli/nvim-colorizer.lua'})
 
 
 

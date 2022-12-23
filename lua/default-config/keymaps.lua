@@ -88,6 +88,9 @@ vim.keymap.set('n', '<leader>lg','<cmd>ToggleTerm<cr>lazygit<cr>', opts)
 -- No neck pain (center the screen)
 vim.keymap.set('n', '<leader>nnp', '<cmd>NoNeckPain<cr>', opts)
 
+-- Colorizer
+vim.keymap.set('n', '<leader>ca', '<cmd>ColorizerAttachToBuffer<cr>', opts)
+vim.keymap.set('n', '<leader>ct', '<cmd>ColorizerToggle<cr>', opts)
 
 -- Send to terminal
 -- vim.keymap.set('n', 'g2', '<cmd>lua require("scripts").send()<CR>', opts)
