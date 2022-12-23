@@ -35,6 +35,12 @@ return require('packer').startup({function(use)
   -- Colors
   use('EdenEast/nightfox.nvim')
   use('sainnhe/everforest')
+  use('sainnhe/sonokai')
+  use('folke/tokyonight.nvim')
+  use('rose-pine/neovim')
+  use('catppuccin/nvim')
+
+  use('rafi/awesome-vim-colorschemes')
 
   -- LSP
   use({ 'williamboman/mason.nvim', 
