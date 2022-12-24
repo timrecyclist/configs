@@ -30,7 +30,7 @@ map('n', '<c-l>', '<c-w>l', opts)
 -- Moving Windows around
 map('n', '<leader><s-h>', '<c-w>K', opts)
 map('n', '<leader><s-k>', '<c-w>H', opts)
-map('n', '<s-s>', '<c-w>x', opts) -- swap windows around
+map('n', '<leader><s-s>', '<c-w>x', opts) -- swap windows around
 
 -- Resize windows
 map('n', '<up>', '<cmd>resize +2<cr>', opts)
