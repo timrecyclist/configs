@@ -79,25 +79,25 @@ _G.packer_plugins = {
     path = "/Users/timchristy/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
-  ["alpha-nvim"] = {
+  ["cmp-buffer"] = {
     loaded = true,
-    path = "/Users/timchristy/.local/share/nvim/site/pack/packer/start/alpha-nvim",
-    url = "https://github.com/goolord/alpha-nvim"
+    path = "/Users/timchristy/.local/share/nvim/site/pack/packer/start/cmp-buffer",
+    url = "https://github.com/hrsh7th/cmp-buffer"
   },
-  ["awesome-vim-colorschemes"] = {
+  ["cmp-cmdline"] = {
     loaded = true,
-    path = "/Users/timchristy/.local/share/nvim/site/pack/packer/start/awesome-vim-colorschemes",
-    url = "https://github.com/rafi/awesome-vim-colorschemes"
-  },
-  ["bufferline.nvim"] = {
-    loaded = true,
-    path = "/Users/timchristy/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
-    url = "https://github.com/akinsho/bufferline.nvim"
+    path = "/Users/timchristy/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
+    url = "https://github.com/hrsh7th/cmp-cmdline"
   },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/Users/timchristy/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
+  },
+  ["cmp-path"] = {
+    loaded = true,
+    path = "/Users/timchristy/.local/share/nvim/site/pack/packer/start/cmp-path",
+    url = "https://github.com/hrsh7th/cmp-path"
   },
   cmp_luasnip = {
     loaded = true,
@@ -109,10 +109,25 @@ _G.packer_plugins = {
     path = "/Users/timchristy/.local/share/nvim/site/pack/packer/start/everforest",
     url = "https://github.com/sainnhe/everforest"
   },
+  ["friendly-snippets"] = {
+    loaded = true,
+    path = "/Users/timchristy/.local/share/nvim/site/pack/packer/start/friendly-snippets",
+    url = "https://github.com/rafamadriz/friendly-snippets"
+  },
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/Users/timchristy/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
+  ["gruvbox.nvim"] = {
+    loaded = true,
+    path = "/Users/timchristy/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
+    url = "https://github.com/ellisonleao/gruvbox.nvim"
+  },
+  harpoon = {
+    loaded = true,
+    path = "/Users/timchristy/.local/share/nvim/site/pack/packer/start/harpoon",
+    url = "https://github.com/ThePrimeagen/harpoon"
   },
   ["lualine.nvim"] = {
     loaded = true,
@@ -139,15 +154,10 @@ _G.packer_plugins = {
     path = "/Users/timchristy/.local/share/nvim/site/pack/packer/start/nightfox.nvim",
     url = "https://github.com/EdenEast/nightfox.nvim"
   },
-  ["no-neck-pain.nvim"] = {
+  ["null-ls.nvim"] = {
     loaded = true,
-    path = "/Users/timchristy/.local/share/nvim/site/pack/packer/start/no-neck-pain.nvim",
-    url = "https://github.com/shortcuts/no-neck-pain.nvim"
-  },
-  ["nui.nvim"] = {
-    loaded = true,
-    path = "/Users/timchristy/.local/share/nvim/site/pack/packer/start/nui.nvim",
-    url = "https://github.com/MunifTanjim/nui.nvim"
+    path = "/Users/timchristy/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
+    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
   },
   nvim = {
     loaded = true,
@@ -164,20 +174,15 @@ _G.packer_plugins = {
     path = "/Users/timchristy/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
     url = "https://github.com/norcalli/nvim-colorizer.lua"
   },
-  ["nvim-csv"] = {
-    loaded = true,
-    path = "/Users/timchristy/.local/share/nvim/site/pack/packer/start/nvim-csv",
-    url = "/Users/timchristy/plugins/nvim-csv"
-  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/Users/timchristy/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
-  ["nvim-python-repl"] = {
+  ["nvim-repl"] = {
     loaded = true,
-    path = "/Users/timchristy/.local/share/nvim/site/pack/packer/start/nvim-python-repl",
-    url = "https://github.com/geg2102/nvim-python-repl"
+    path = "/Users/timchristy/.local/share/nvim/site/pack/packer/start/nvim-repl",
+    url = "https://github.com/pappasam/nvim-repl"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
@@ -203,6 +208,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/timchristy/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  ["prettier.nvim"] = {
+    loaded = true,
+    path = "/Users/timchristy/.local/share/nvim/site/pack/packer/start/prettier.nvim",
+    url = "https://github.com/MunifTanjim/prettier.nvim"
   },
   sonokai = {
     loaded = true,
@@ -233,6 +243,21 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/timchristy/.local/share/nvim/site/pack/packer/start/vim-illuminate",
     url = "https://github.com/RRethy/vim-illuminate"
+  },
+  ["vim-repeat"] = {
+    loaded = true,
+    path = "/Users/timchristy/.local/share/nvim/site/pack/packer/start/vim-repeat",
+    url = "https://github.com/tpope/vim-repeat"
+  },
+  ["vim-startify"] = {
+    loaded = true,
+    path = "/Users/timchristy/.local/share/nvim/site/pack/packer/start/vim-startify",
+    url = "https://github.com/mhinz/vim-startify"
+  },
+  vimwiki = {
+    loaded = true,
+    path = "/Users/timchristy/.local/share/nvim/site/pack/packer/start/vimwiki",
+    url = "https://github.com/vimwiki/vimwiki"
   }
 }
 

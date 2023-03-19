@@ -10,6 +10,9 @@ vim.g.maplocalleader = '\\'
 map('i', 'jk', '<esc>', opts)
 map('v', 'jk', '<esc>', opts)
 
+-- Open config
+map('n', '<leader>conf', '<cmd>vs | term <cr>acd ~/.config/nvim/<cr>nvim lua/default-config/keymaps.lua<cr><leader>e', opts)
+
 -- Splits
 map('n', '<leader>v', '<cmd>vs<cr><cmd>bn<cr>', opts)
 map('n', '<leader>s', '<cmd>sp<cr><cmd>bn<cr>', opts)
@@ -19,7 +22,10 @@ map('n', '<leader>x', '<cmd>bdelete!<cr><cmd>bnext<cr>', opts)
 map('n', '<leader>hl', '<cmd>nohl<cr>', opts)
 
 -- Quick save and exit
-map('n', '<leader>wq', '<cmd>w<cr><cmd>bdelete!<cr><cmd>bnext<cr>', opts)
+map('n', '<leader>wx', '<cmd>w<cr><cmd>bdelete!<cr><cmd>bnext<cr>', opts)
+map('n', '<leader>Q', '<cmd>qall!<cr>', opts)
+map('n', '<leader>WQ', '<cmd>wall<cr><cmd>qall!<cr>', opts)
+
 
 -- Window Navigation for cursor
 map('n', '<c-h>', '<c-w>h', opts)
@@ -43,8 +49,8 @@ map('n', '<leader>tv', '<cmd>vs | term<cr>a', opts) -- vs
 map('n', '<leader>ts', '<cmd>sp | term<cr>a', opts) -- sp
 
 -- Buffer Navigation
-map('n', '<S-h>', '<cmd>bprevious<cr>', opts) 
-map('n', '<S-l>', '<cmd>bnext<cr>', opts) 
+map('n', '<S-h>', '<cmd>bprevious<cr>', opts)
+map('n', '<S-l>', '<cmd>bnext<cr>', opts)
 map('n', '<S-m>', '<cmd>tab split<cr>', opts)
 map('n', '<S-b>', '<cmd>ball<cr>', opts)
 
@@ -55,19 +61,31 @@ map('n', '<S-b>', '<cmd>ball<cr>', opts)
 -- map('t', '<c-l>', '<c-\\><c-n><c-w><c-l>', opts)
 
 -- Better indentation
-map('v', '<', '<gv', opts) 
-map('v', '>', '>gv', opts) 
+map('v', '<', '<gv', opts)
+map('v', '>', '>gv', opts)
 
 -- Paste over currently selected text without yanking it - i.e. you can paste repeatedly now
-map('v', 'p', "'_dP", opts)
+map('v', 'p', "_dP", opts)
 
 -- Center search results
 map('n', 'n', 'nzz', opts)
 map('n', 'N', 'Nzz', opts)
 
 -- Run a live server
-map('n', '<leader>rls', '<cmd>term live-server %<cr><cmd>bp<cr>', opts)
+map('n', '<leader>rls', '<cmd>term live-server<cr><cmd>bp<cr>', opts)
 
+
+-- add parentheses, brackets, or curly braces to end of line
+vim.keymap.set('n', '<leader>pp', 'A()<esc>i')
+vim.keymap.set('n', '<leader>bb', 'A[]<esc>i')
+vim.keymap.set('n', '<leader>cc', 'A{}<esc>i')
+
+-- Surround visual selection in quotes, parentheses, brackets, curly braces
+vim.keymap.set("v", "<leader>'", "c''<esc>P", opts)
+vim.keymap.set("v", '<leader>"', 'c""<esc>P', opts)
+vim.keymap.set("v", "<leader>p", "c()<esc>P", opts)
+vim.keymap.set("v", "<leader>b", "c[]<esc>P", opts)
+vim.keymap.set("v", "<leader>c", "c{}<esc>P", opts)
 
 
 --[[ Plugins ]]--
@@ -85,13 +103,10 @@ vim.keymap.set('n', '<leader>fh', builtin.help_tags, opts)
 -- Lazygit
 vim.keymap.set('n', '<leader>lg','<cmd>ToggleTerm<cr>lazygit<cr>', opts)
 
--- No neck pain (center the screen)
-vim.keymap.set('n', '<leader>nnp', '<cmd>NoNeckPain<cr>', opts)
-
 -- Colorizer
 vim.keymap.set('n', '<leader>ca', '<cmd>ColorizerAttachToBuffer<cr>', opts)
 vim.keymap.set('n', '<leader>ct', '<cmd>ColorizerToggle<cr>', opts)
 
--- Send to terminal
--- vim.keymap.set('n', 'g2', '<cmd>lua require("scripts").send()<CR>', opts)
--- vim.keymap.set('x', 'g2', '<cmd>lua require("scripts").send(true)<CR>', opts)
+-- BarBar
+-- vim.keymap.set('n', '<S-Right>', '<cmd>BufferLineMoveNext<cr>', opts)
+-- vim.keymap.set('n', '<S-Left>', '<cmd>BufferLineMovePrev<cr>', opts)

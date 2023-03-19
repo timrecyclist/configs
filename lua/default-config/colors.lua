@@ -1,3 +1,2 @@
-vim.o.termguicolors = true
-vim.cmd[[colorscheme terafox]]
-vim.cmd[[colorscheme everforest]]
+vim.opt.termguicolors = true
+vim.cmd[[colorscheme nightfox]]

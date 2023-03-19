@@ -6,11 +6,11 @@ local opts = {
 
   -- Spacing and cursor
   cursorline = true,
-  expandtab = true,
-  shiftwidth = 2,
+  smartindent = false,
   tabstop = 2,
-  wrap = false,
-  scrolloff = 10,
+  shiftwidth = 2,
+  expandtab = true,
+  scrolloff = 20,
   sidescrolloff = 10,
 
   relativenumber = true,
@@ -24,6 +24,12 @@ local opts = {
 
   ignorecase = true,
   smartcase = true,
+
+  wrap = true,
+  linebreak = true,
+  list = false,
+  textwidth=80,
+
 
   -- show invisibles
   --listchars={tab:▸\ ,eol:¬},
