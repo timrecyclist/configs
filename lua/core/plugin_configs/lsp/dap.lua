@@ -6,7 +6,7 @@ require("dapui").setup()
 vim.keymap.set("n", "<F12>", require('dapui').toggle)
 
 -- Keymaps
-vim.keymap.set("n", "<leader>b", require('dap').toggle_breakpoint)
+vim.keymap.set("n", "<leader><leader>b", require('dap').toggle_breakpoint)
 vim.keymap.set("n", "<F1>", require('dap').continue)
 vim.keymap.set("n", "<F2>",require('dap').step_into)
 vim.keymap.set("n", "<F3>",require('dap').step_over)
