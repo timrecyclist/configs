@@ -1,7 +1,0 @@
--- local colors = vim.api.nvim_create_augroup("colors", {clear = true})
--- vim.api.nvim_create_autocmd("BufAdd", {
---   pattern = {"*.css", "*.html"},
---   command = "colorscheme nightfox",
---   group = colors
--- })
--- 
