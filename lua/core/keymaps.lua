@@ -33,7 +33,7 @@ vim.keymap.set({"n"}, "<S-l>", "<cmd>bn<cr>", default_opts)
 vim.keymap.set({"n"}, "<leader>x", "<cmd>bdelete<cr>", default_opts)
 
 -- GitUI
-vim.keymap.set({"n"}, "<leader>g", "<cmd>tabnew | terminal gitui<cr>", default_opts)
+vim.keymap.set({"n"}, "<leader>g", "<cmd>tabnew | terminal gitui<cr>a", default_opts)
 
 -- Protip: use :verbose nmap to see all keymappings and where they were set from
 -- Or :Telescope keymap
