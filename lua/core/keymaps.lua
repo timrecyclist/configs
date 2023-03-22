@@ -8,10 +8,7 @@ vim.g.maplocalleader = "\\"
 
 -- Getting back to normal
 vim.keymap.set({"v",  "i"}, "jk", "<esc>", default_opts)
-vim.keymap.set({"t"}, "jk", "<C-\\><C-N>", default_opts)
-
--- Netrw
-vim.keymap.set("n", "<leader>e", "<cmd>NeoTreeShowToggle<cr>", default_opts)
+vim.keymap.set({"t"}, "<leader>jk", "<C-\\><C-N>", default_opts)
 
 -- Window Management
 vim.keymap.set("n", "<leader>q", "<cmd>q!<cr>", default_opts)
@@ -34,6 +31,9 @@ vim.keymap.set({"n"}, "<leader>ts", "<cmd>sp | terminal<cr>", default_opts)
 vim.keymap.set({"n"}, "<S-h>", "<cmd>bp<cr>", default_opts)
 vim.keymap.set({"n"}, "<S-l>", "<cmd>bn<cr>", default_opts)
 vim.keymap.set({"n"}, "<leader>x", "<cmd>bdelete<cr>", default_opts)
+
+-- GitUI
+vim.keymap.set({"n"}, "<leader>g", "<cmd>tabnew | terminal gitui<cr>", default_opts)
 
 -- Protip: use :verbose nmap to see all keymappings and where they were set from
 -- Or :Telescope keymap
