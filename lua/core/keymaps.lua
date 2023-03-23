@@ -37,3 +37,6 @@ vim.keymap.set({"n"}, "<leader>gg", "<cmd>tabnew | terminal gitui<cr>a", default
 
 -- Protip: use :verbose nmap to see all keymappings and where they were set from
 -- Or :Telescope keymap
+
+-- Ipython autoreload modules
+vim.keymap.set({"n"}, "<leader>ipy", "<esc>a%load_ext autoreload<cr>%autoreload 2<cr>%reload_ext autoreload<cr>", default_opts)
