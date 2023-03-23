@@ -82,4 +82,8 @@ require("lazy").setup({
 
   -- Whichkey
   "folke/which-key.nvim",
+
+  -- dadbod
+  "tpope/vim-dadbod",
+  "kristijanhusak/vim-dadbod-ui",
 })
