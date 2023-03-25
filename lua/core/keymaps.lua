@@ -10,6 +10,16 @@ vim.g.maplocalleader = "\\"
 vim.keymap.set({"v",  "i"}, "jk", "<esc>", default_opts)
 vim.keymap.set({"t"}, "<leader>jk", "<C-\\><C-N>", default_opts)
 
+-- Better j,k movement
+vim.keymap.set({"n", "v"}, "j", "gj", default_opts)
+vim.keymap.set({"n", "v"}, "k", "gk", default_opts)
+
+-- Better tabbing
+vim.keymap.set({"v"}, "<", "<gv", default_opts)
+vim.keymap.set({"v"}, ">", ">gv", default_opts)
+vim.keymap.set({"n"}, "<", "<<", default_opts)
+vim.keymap.set({"n"}, ">", ">>", default_opts)
+
 -- Window Management
 vim.keymap.set("n", "<leader>q", "<cmd>q!<cr>", default_opts)
 vim.keymap.set("n", "<leader>w", "<cmd>w<cr>", default_opts)
@@ -22,6 +32,12 @@ vim.keymap.set({"n", "t"}, "<C-h>", "<C-w>h", default_opts)
 vim.keymap.set({"n", "t"}, "<C-j>", "<C-w>j", default_opts)
 vim.keymap.set({"n", "t"}, "<C-k>", "<C-w>k", default_opts)
 vim.keymap.set({"n", "t"}, "<C-l>", "<C-w>l", default_opts)
+
+-- Window resizing
+vim.keymap.set("n", "<Left>", "<cmd>vertical resize +1<cr>", default_opts)
+vim.keymap.set("n", "<Right>", "<cmd>vertical resize -1<cr>", default_opts)
+vim.keymap.set("n", "<Up>", "<cmd>resize +1<cr>", default_opts)
+vim.keymap.set("n", "<Down>", "<cmd>resize -1<cr>", default_opts)
 
 -- Open a terminal
 vim.keymap.set({"n"}, "<leader>tv", "<cmd>vs | terminal<cr>", default_opts)
