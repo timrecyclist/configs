@@ -1,10 +1,10 @@
 -- augroup
 local function augroup(group_name)
-  return vim.api.nvim_create_augroup( group_name, {clear = true})
+  return vim.api.nvim_create_augroup(group_name, { clear = true })
 end
 
 -- Autocommand to make a smoother close of terminal from gitui
-vim.api.nvim_create_autocmd("TermClose",{
+vim.api.nvim_create_autocmd("TermClose", {
   group = augroup("gitui"),
   callback = function()
     vim.api.nvim_input("<cr>")
@@ -17,5 +17,14 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   buffer = 0,
   callback = function()
     vim.lsp.buf.format()
+  end,
+})
+
+
+-- Highlight on yank
+vim.api.nvim_create_autocmd("TextYankPost", {
+  group = augroup("yank_highlighting"),
+  callback = function()
+    vim.highlight.on_yank()
   end,
 })
