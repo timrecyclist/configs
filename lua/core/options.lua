@@ -9,5 +9,14 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 10
 vim.opt.swapfile = false
-
-
+vim.opt.textwidth =79
+vim.opt.colorcolumn="80"
+vim.opt.encoding = "utf-8"
+vim.opt.linebreak = true
+vim.opt.listchars = {eol="↵"}
+vim.opt.list = true
+vim.opt.equalalways = false
+vim.opt.showmatch = true
+vim.opt.hidden = true
+vim.opt.updatetime = 250
+-- vim.opt.filetype = "true"
