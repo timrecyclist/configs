@@ -57,6 +57,7 @@ require("lazy").setup({
 	'sainnhe/everforest',
 	'sainnhe/gruvbox-material',
   'ellisonleao/gruvbox.nvim',
+  'sam4llis/nvim-tundra',
 
   -- myNvimPlugins
   {dir = '~/myNvimPlugins/myRepl'},
@@ -80,10 +81,6 @@ require("lazy").setup({
       dependencies = { 'nvim-lua/plenary.nvim' }
   },
 
-  -- Whichkey
-  "folke/which-key.nvim",
-
-  -- dadbod
-  "tpope/vim-dadbod",
-  "kristijanhusak/vim-dadbod-ui",
+  -- Zen
+  "Pocco81/true-zen.nvim",
 })
