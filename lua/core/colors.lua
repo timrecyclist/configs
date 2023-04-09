@@ -1,59 +1,66 @@
 -- keep tundra invoked. Can change colorscheme still.
 -- Just tundra won't be available unless you leave that line
-require('nvim-tundra').setup({
-  transparent_background = false,
-  dim_inactive_windows = {
-    enabled = true,
-    color = nil,
-  },
-  sidebars = {
-    enabled = true,
-    color = nil,
-  },
-  editor = {
-    search = {},
-    substitute = {},
-  },
-  syntax = {
-    booleans = { bold = true, italic = true },
-    comments = { bold = true, italic = true },
-    conditionals = {},
-    constants = { bold = true },
-    fields = {},
-    functions = {},
-    keywords = {},
-    loops = {},
-    numbers = { bold = true },
-    operators = { bold = true },
-    punctuation = {},
-    strings = {},
-    types = { italic = true },
-  },
-  diagnostics = {
-    errors = {},
-    warnings = {},
-    information = {},
-    hints = {},
-  },
-  plugins = {
-    lsp = true,
-    treesitter = true,
-    telescope = true,
-    nvimtree = true,
-    cmp = true,
-    context = true,
-    dbui = true,
-    gitsigns = true,
-    neogit = true,
-  },
-  overwrite = {
-    colors = {},
-    highlights = {},
-  },
-})
+-- require('nvim-tundra').setup({
+--   transparent_background = false,
+--   dim_inactive_windows = {
+--     enabled = false,
+--     color = nil,
+--   },
+--   sidebars = {
+--     enabled = true,
+--     color = nil,
+--   },
+--   editor = {
+--     search = {},
+--     substitute = {},
+--   },
+--   syntax = {
+--     booleans = { bold = true, italic = false},
+--     comments = { bold = true, italic = false},
+--     conditionals = {},
+--     constants = { bold = true },
+--     fields = {},
+--     functions = {},
+--     keywords = {},
+--     loops = {},
+--     numbers = { bold = true },
+--     operators = { bold = true },
+--     punctuation = {},
+--     strings = {},
+--     types = { italic = false},
+--   },
+--   diagnostics = {
+--     errors = {},
+--     warnings = {},
+--     information = {},
+--     hints = {},
+--   },
+--   plugins = {
+--     lsp = true,
+--     treesitter = true,
+--     telescope = true,
+--     nvimtree = true,
+--     cmp = true,
+--     context = true,
+--     dbui = true,
+--     gitsigns = true,
+--     neogit = true,
+--   },
+--   overwrite = {
+--     colors = {},
+--     highlights = {},
+--   },
+-- })
+-- 
+-- -- vim.opt.background = 'dark'
+-- Can't see EOL otherwise. Should figure out a better organization for all
+-- this
+-- vim.cmd[[highlight NonText ctermfg=8 guifg=gray]]
 
-vim.opt.background = 'dark'
-vim.cmd('colorscheme tundra')
 
 
+-- Set colorscheme
+-- Can't support italics
+vim.cmd("let g:gruvbox_material_disable_italic_comment = 1")
+vim.cmd('colorscheme gruvbox-material')
 
