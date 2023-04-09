@@ -19,24 +19,27 @@ require("lazy").setup({
   "nvim-tree/nvim-web-devicons",
   "MunifTanjim/nui.nvim",
 
-	-- LSP
-	"williamboman/mason.nvim",
-	"williamboman/mason-lspconfig.nvim",
-	"neovim/nvim-lspconfig",
-	"jose-elias-alvarez/null-ls.nvim",
+  -- LSP
+  "williamboman/mason.nvim",
+  "williamboman/mason-lspconfig.nvim",
+  "neovim/nvim-lspconfig",
+  "jose-elias-alvarez/null-ls.nvim",
 
   -- TreeSitter
   "nvim-treesitter/nvim-treesitter",
 
-	-- Autocompletion
-	'hrsh7th/nvim-cmp', -- engine
-	'hrsh7th/cmp-nvim-lsp', -- things that go in the engine
-	'hrsh7th/cmp-buffer',
-	'hrsh7th/cmp-path',
-	'hrsh7th/cmp-cmdline',
+  -- Autocompletion
+  'hrsh7th/nvim-cmp', -- engine
+  'hrsh7th/cmp-nvim-lsp', -- things that go in the engine
+  'hrsh7th/cmp-buffer',
+  'hrsh7th/cmp-path',
+  'hrsh7th/cmp-cmdline',
   'L3MON4D3/LuaSnip',
   'saadparwaiz1/cmp_luasnip',
   'rafamadriz/friendly-snippets',
+
+  -- Autopairs
+  'windwp/nvim-autopairs',
 
   -- Better ordering for completions
   "lukas-reineke/cmp-under-comparator",
@@ -52,10 +55,10 @@ require("lazy").setup({
   "folke/neodev.nvim",
 
 
-	-- Colorschemes
-	'EdenEast/nightfox.nvim',
-	'sainnhe/everforest',
-	'sainnhe/gruvbox-material',
+  -- Colorschemes
+  'EdenEast/nightfox.nvim',
+  'sainnhe/everforest',
+  'sainnhe/gruvbox-material',
   'ellisonleao/gruvbox.nvim',
   'sam4llis/nvim-tundra',
 
@@ -83,4 +86,12 @@ require("lazy").setup({
 
   -- Zen
   "Pocco81/true-zen.nvim",
+
+  -- DB
+  'tpope/vim-dadbod',
+  'kristijanhusak/vim-dadbod-ui',
+  'kristijanhusak/vim-dadbod-completion',
+
+  -- VimFugitive
+  'tpope/vim-fugitive',
 })
