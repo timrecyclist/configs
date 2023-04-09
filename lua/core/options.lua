@@ -1,6 +1,7 @@
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
+vim.opt.termguicolors = true
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.softtabstop = 2
@@ -20,3 +21,4 @@ vim.opt.showmatch = true
 vim.opt.hidden = true
 vim.opt.updatetime = 250
 -- vim.opt.filetype = "true"
+
