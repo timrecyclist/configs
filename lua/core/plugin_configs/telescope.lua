@@ -1,4 +1,4 @@
-require('telescope').setup{
+require("telescope").setup({
   defaults = {
     -- Default configuration for telescope goes here:
     -- config_key = value,
@@ -7,9 +7,9 @@ require('telescope').setup{
         -- map actions.which_key to <C-h> (default: <C-/>)
         -- actions.which_key shows the mappings for your picker,
         -- e.g. git_{create, delete, ...}_branch for the git_branches picker
-        ["<C-h>"] = "which_key"
-      }
-    }
+--        ["<C-h>"] = "which_key",
+      },
+    },
   },
   pickers = {
     -- Default configuration for builtin pickers goes here:
@@ -26,26 +26,26 @@ require('telescope').setup{
     --   extension_config_key = value,
     -- }
     -- please take a look at the readme of the extension you want to configure
-  }
-}
-local builtin = require('telescope.builtin')
+  },
+})
+local builtin = require("telescope.builtin")
 local opts = { noremap = true }
-vim.keymap.set('n', '<leader>ff', builtin.find_files, opts)
-vim.keymap.set('n', '<leader>fs', builtin.live_grep, opts)
-vim.keymap.set('n', '<leader>fb', builtin.buffers, opts)
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, opts)
-vim.keymap.set('n', '<leader>fc', builtin.commands, opts)
-vim.keymap.set('n', '<leader>fm', builtin.man_pages, opts)
-vim.keymap.set('n', '<leader>fq', builtin.quickfix, opts)
-vim.keymap.set('n', '<leader>fo', builtin.vim_options, opts)
-vim.keymap.set('n', '<leader>fk', builtin.keymaps, opts)
-vim.keymap.set('n', '<leader>fd', builtin.diagnostics, {noremap=true, buffer=0})
+vim.keymap.set("n", "<leader>ff", builtin.find_files, opts)
+vim.keymap.set("n", "<leader>fg", builtin.live_grep, opts)
+vim.keymap.set("n", "<leader>fb", builtin.buffers, opts)
+vim.keymap.set("n", "<leader>fh", builtin.help_tags, opts)
+vim.keymap.set("n", "<leader>fc", builtin.commands, opts)
+vim.keymap.set("n", "<leader>fm", builtin.man_pages, opts)
+vim.keymap.set("n", "<leader>fq", builtin.quickfix, opts)
+vim.keymap.set("n", "<leader>fo", builtin.vim_options, opts)
+vim.keymap.set("n", "<leader>fk", builtin.keymaps, opts)
+vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { noremap = true, buffer = 0 })
 
 -- Git
-vim.keymap.set('n', '<leader>gf', builtin.git_files, opts)
-vim.keymap.set('n', '<leader>gc', builtin.git_commits, opts)
-vim.keymap.set('n', '<leader>gd', builtin.git_bcommits, opts)
-vim.keymap.set('n', '<leader>gb', builtin.git_branches, opts)
-vim.keymap.set('n', '<leader>gs', builtin.git_status, opts)
-vim.keymap.set('n', '<leader>gx', builtin.git_stash, opts)
+vim.keymap.set("n", "<leader>tf", builtin.git_files, opts)
+vim.keymap.set("n", "<leader>tc", builtin.git_commits, opts)
+vim.keymap.set("n", "<leader>td", builtin.git_bcommits, opts)
+vim.keymap.set("n", "<leader>tb", builtin.git_branches, opts)
+vim.keymap.set("n", "<leader>ts", builtin.git_status, opts)
+vim.keymap.set("n", "<leader>tx", builtin.git_stash, opts)
 
