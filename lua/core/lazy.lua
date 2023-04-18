@@ -61,14 +61,13 @@ require("lazy").setup({
   'sainnhe/gruvbox-material',
   'ellisonleao/gruvbox.nvim',
   'sam4llis/nvim-tundra',
+  'folke/tokyonight.nvim',
+  'catppuccin/catppuccin',
+  'rose-pine/rose-pine-theme',
+
 
   -- myNvimPlugins
   {dir = '~/myNvimPlugins/myRepl'},
-  "tpope/vim-repeat",
-  "pappasam/nvim-repl",
-
-  -- lua-dev
-  "bfredl/nvim-luadev",
 
   -- File Explorer
   { "nvim-neo-tree/neo-tree.nvim",
@@ -84,14 +83,18 @@ require("lazy").setup({
       dependencies = { 'nvim-lua/plenary.nvim' }
   },
 
-  -- Zen
-  "Pocco81/true-zen.nvim",
-
-  -- DB
-  'tpope/vim-dadbod',
-  'kristijanhusak/vim-dadbod-ui',
-  'kristijanhusak/vim-dadbod-completion',
-
   -- VimFugitive
   'tpope/vim-fugitive',
+
+  -- nvim-luapad
+  'rafcamlet/nvim-luapad',
+
+  -- toggleterm
+  -- {"akinsho/toggleterm.nvim", version = "*", config = true},
+
+  -- No
+  -- 'tpope/vim-repeat',
+  -- 'pappasam/nvim-repl',
+  -- 'sillybun/vim-repl'
+  'jpalardy/vim-slime',
 })

@@ -5,7 +5,7 @@ local M = {}
 
 local api = vim.api
 
-function M.makeScratch()
+M.makeScratch = function()
   -- We can create a new buffer with the enew command, and the neovim API gives
   -- us a way to call nvim commands from lua:
   api.nvim_command('enew') -- equivalent to :enew
@@ -16,5 +16,15 @@ function M.makeScratch()
   vim.bo[0].bufhidden='hide'
   vim.bo[0].swapfile=false
 end
+
+-- Print runtime path
+M.rtp = function()
+  local paths = vim.inspect(vim.api.nvim_list_runtime_paths())
+  for _, path in pairs(paths) do
+    print(path)
+  end
+end
+
+-- Print out table
 
 return M

@@ -28,10 +28,10 @@ vim.keymap.set("n", "<leader>s", "<cmd>sp<cr>", default_opts)
 vim.keymap.set("n", "<leader>Q", "<cmd>qall!<cr>", default_opts)
 
 -- Window Navigation
-vim.keymap.set({"n", "t"}, "<C-h>", "<C-w>h", default_opts)
-vim.keymap.set({"n", "t"}, "<C-j>", "<C-w>j", default_opts)
-vim.keymap.set({"n", "t"}, "<C-k>", "<C-w>k", default_opts)
-vim.keymap.set({"n", "t"}, "<C-l>", "<C-w>l", default_opts)
+vim.keymap.set({"n", "t"}, "<C-h>", "<cmd>wincmd h<cr>", default_opts)
+vim.keymap.set({"n", "t"}, "<C-j>", "<cmd>wincmd j<cr>", default_opts)
+vim.keymap.set({"n", "t"}, "<C-k>", "<cmd>wincmd k<cr>", default_opts)
+vim.keymap.set({"n", "t"}, "<C-l>", "<cmd>wincmd l<cr>", default_opts)
 
 -- Window resizing
 vim.keymap.set("n", "<Left>", "<cmd>vertical resize +1<cr>", default_opts)
@@ -39,14 +39,12 @@ vim.keymap.set("n", "<Right>", "<cmd>vertical resize -1<cr>", default_opts)
 vim.keymap.set("n", "<Up>", "<cmd>resize +1<cr>", default_opts)
 vim.keymap.set("n", "<Down>", "<cmd>resize -1<cr>", default_opts)
 
--- Open a terminal
-vim.keymap.set({"n"}, "<leader>tv", "<cmd>vs | terminal<cr>", default_opts)
-vim.keymap.set({"n"}, "<leader>ts", "<cmd>sp | terminal<cr>", default_opts)
+-- Terminal
+-- All terminal keymappings are in vim-slime
 
 -- Buffers
 vim.keymap.set({"n"}, "<S-h>", "<cmd>bp<cr>", default_opts)
 vim.keymap.set({"n"}, "<S-l>", "<cmd>bn<cr>", default_opts)
-vim.keymap.set({"n"}, "<leader>x", "<cmd>bdelete<cr>", default_opts)
 
 -- GitUI
 -- vim.keymap.set({"n"}, "<leader>gg", "<cmd>tabnew | terminal gitui<cr>a", default_opts)

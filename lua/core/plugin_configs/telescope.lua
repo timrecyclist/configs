@@ -49,3 +49,5 @@ vim.keymap.set("n", "<leader>tb", builtin.git_branches, opts)
 vim.keymap.set("n", "<leader>ts", builtin.git_status, opts)
 vim.keymap.set("n", "<leader>tx", builtin.git_stash, opts)
 
+-- Lua dev - reload modules
+vim.keymap.set("n", "<leader>tr", "<cmd>Telescope reloader<cr>", opts)
