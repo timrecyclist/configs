@@ -40,14 +40,6 @@ vim.keymap.set("n", "<leader>fq", builtin.quickfix, opts)
 vim.keymap.set("n", "<leader>fo", builtin.vim_options, opts)
 vim.keymap.set("n", "<leader>fk", builtin.keymaps, opts)
 vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { noremap = true, buffer = 0 })
+vim.keymap.set("n", "<leader>fr", "<cmd>Telescope registers<cr>", opts)
 
--- Git
-vim.keymap.set("n", "<leader>tf", builtin.git_files, opts)
-vim.keymap.set("n", "<leader>tc", builtin.git_commits, opts)
-vim.keymap.set("n", "<leader>td", builtin.git_bcommits, opts)
-vim.keymap.set("n", "<leader>tb", builtin.git_branches, opts)
-vim.keymap.set("n", "<leader>ts", builtin.git_status, opts)
-vim.keymap.set("n", "<leader>tx", builtin.git_stash, opts)
 
--- Lua dev - reload modules
-vim.keymap.set("n", "<leader>tr", "<cmd>Telescope reloader<cr>", opts)

@@ -41,7 +41,6 @@ vim.keymap.set("n", "<Down>", "<cmd>resize -1<cr>", default_opts)
 
 -- Terminal
 -- All terminal keymappings are in vim-slime
-
 -- Buffers
 vim.keymap.set({"n"}, "<S-h>", "<cmd>bp<cr>", default_opts)
 vim.keymap.set({"n"}, "<S-l>", "<cmd>bn<cr>", default_opts)
@@ -54,4 +53,13 @@ vim.keymap.set({"n"}, "<S-l>", "<cmd>bn<cr>", default_opts)
 
 -- Ipython autoreload modules
 vim.keymap.set({"n"}, "<leader>ipy", "<esc>a%load_ext autoreload<cr>%autoreload 2<cr>%reload_ext autoreload<esc><S-v><up><up>", default_opts)
+
+-- Create a new tab
+vim.keymap.set({"n"}, "<leader>tn", "<cmd>tabnew<cr>", default_opts)
+
+-- Keymap to tabnext
+vim.keymap.set({"n", "t"}, "]t", "<cmd>tabnext<cr>", slopts)
+vim.keymap.set({"n", "t"}, "[t", "<cmd>tabprev<cr>", slopts)
+
+
 

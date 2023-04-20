@@ -197,15 +197,20 @@ end
 local slopts = {noremap=true}
 function Slimekeys(repl)
   if repl == "ipython" then
-    vim.keymap.set({"n"}, "<leader><cr>", ipython_repl, slopts)
+    vim.keymap.set({"n"}, "<leader><cr>", function() ipython_repl("horizontal") end, slopts)
+    vim.keymap.set({"n"}, "<leader>v<cr>", function() ipython_repl("vertical") end, slopts)
     vim.keymap.set({"n"}, "<cr>", "<cmd>SlimeSend<cr>", slopts)
     vim.keymap.set({"v"}, "<cr>", "<Plug>SlimeRegionSend", slopts)
   elseif repl == "psql" then
-    vim.keymap.set({"n"}, "<leader><cr>", psql_repl, slopts)
+    vim.keymap.set({"n"}, "<leader>r<cr>", function() psql_repl("horizontal", true) end, slopts)
+    vim.keymap.set({"n"}, "<leader><cr>", function() psql_repl("horizontal", false) end, slopts)
+    vim.keymap.set({"n"}, "<leader>rv<cr>", function() psql_repl("vertical", true) end, slopts)
+    vim.keymap.set({"n"}, "<leader><cr>", function() psql_repl("vertical", false) end, slopts)
     vim.keymap.set({"n"}, "<cr>", "<cmd>SlimeSendCurrentLine<cr>", slopts)
     vim.keymap.set({"v"}, "<cr>", "<Plug>SlimeRegionSend", slopts)
   else
     vim.keymap.set({"n"}, "<leader><cr>", "<cmd>sp|term<cr>", slopts)
+    vim.keymap.set({"n"}, "<leader>v<cr>", "<cmd>vsplit|term<cr>", slopts)
     vim.keymap.set({"n"}, "<cr>", "<cmd>SlimeSendCurrentLine<cr>", slopts)
     vim.keymap.set({"v"}, "<cr>", "<Plug>SlimeRegionSend", slopts)
   end
@@ -236,3 +241,5 @@ vim.api.nvim_create_autocmd({"BufEnter","BufWinEnter"}, {
   command="norm a"
 })
 
+-- Keymap to tabnext
+vim.keymap.set({"n", "t"}, "<C-\\>", "<cmd>tabnext<cr>", slopts)

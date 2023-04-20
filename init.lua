@@ -1,9 +1,9 @@
 -- VSCode
-if vim.g.vscode then
-    -- VSCode extension
-else
-    -- ordinary Neovim
-end
+-- if vim.g.vscode then
+--     -- VSCode extension
+-- else
+--     -- ordinary Neovim
+-- end
 -- Non-plugin stuff
 require("core.options")
 require("core.utils")
