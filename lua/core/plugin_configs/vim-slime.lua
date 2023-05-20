@@ -240,6 +240,3 @@ vim.api.nvim_create_autocmd({"BufEnter","BufWinEnter"}, {
   pattern="term://*",
   command="norm a"
 })
-
--- Keymap to tabnext
-vim.keymap.set({"n", "t"}, "<C-\\>", "<cmd>tabnext<cr>", slopts)
